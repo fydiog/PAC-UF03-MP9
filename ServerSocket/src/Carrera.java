@@ -21,7 +21,7 @@ public class Carrera extends Thread {
     public static void terminarCarrera(String winner){
         System.out.flush();
         System.out.printf("La carrera ha acabado! %s es el ganador.\n\n", winner);
-        ganador = winner;
+        ganador = winner; //La primera tortuga que acabe el bucle será el ganador
         for (Tortuga th: listaCorredores){
             th.interrupt();
         }

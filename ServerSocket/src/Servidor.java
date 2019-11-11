@@ -37,8 +37,10 @@ public class Servidor {
                 System.out.println("Esperando conexión del cliente");
                 socket = serverSocket.accept(); // El servidor se queda a la espera de que un cliente haga una petición
 
+                //Flujos de entrada y salida de datos del servidor
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());
+                //Flujos de entrada y salida de objetos del servidor
                 objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
                 objectIntputStream = new ObjectInputStream(socket.getInputStream());
 

@@ -38,7 +38,7 @@ public class Tortuga extends Thread implements Serializable {
                 System.out.println(dorsal + " corriendo por el metro " + i);
             }
             if (finished == false) {
-                finished = true;
+                finished = true; //Cuando una tortuga entra en este if automaticamente termina la carrera y manda a cerrar los demás hilos
                 Carrera.terminarCarrera(getNombre());
             } else {
                 Thread.sleep(1000);
