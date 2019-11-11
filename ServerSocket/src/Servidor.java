@@ -79,7 +79,7 @@ public class Servidor {
 
                     } else if (opcionCliente.equals("4")) {
                         Carrera carrera = new Carrera();
-                        carrera.start();
+                        carrera.empezarCarrera();
                         out.writeUTF(carrera.getGanador());
                     } else if (opcionCliente.equals("5")) {
                         System.out.println("Terminando conexión");

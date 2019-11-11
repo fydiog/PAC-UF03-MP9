@@ -3,12 +3,11 @@ import java.util.List;
 
 public class Carrera extends Thread {
 
-    private static List<Tortuga> listaCorredores;
+    private static ArrayList<Tortuga> listaCorredores;
     public static String ganador;
 
 
-    @Override
-    public void run(){
+    public void empezarCarrera(){
 
         listaCorredores = Servidor.getList();
         for (Tortuga t : listaCorredores){
@@ -16,15 +15,27 @@ public class Carrera extends Thread {
             t.start();
 
         }
+
+        for (Tortuga t: listaCorredores){
+            try{
+                t.join();
+            }
+            catch (InterruptedException e){
+                System.out.println("La carrera se ha interrumpido.");
+                break;
+            }
+        }
     }
 
     public static void terminarCarrera(String winner){
         System.out.flush();
         System.out.printf("La carrera ha acabado! %s es el ganador.\n\n", winner);
-        ganador = winner; //La primera tortuga que acabe el bucle será el ganador
+        ganador = winner;
+
         for (Tortuga th: listaCorredores){
             th.interrupt();
         }
+
 
     }
 

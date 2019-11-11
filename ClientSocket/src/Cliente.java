@@ -73,7 +73,7 @@ public class Cliente implements Serializable {
                     case 4:
                         out.writeUTF("4");
                         System.out.println("La carrera ha empezado!");
-                        System.out.println("El ganador es" + in.readUTF());
+                        System.out.println("El ganador es " + in.readUTF());
                         break;
                     case 5:
                         out.writeUTF("5");
